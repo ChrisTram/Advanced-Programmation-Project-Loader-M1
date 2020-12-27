@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.unice.miage</groupId>
+  <artifactId>projet</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>base-plugin</module>
+    <module>base-game</module>
+    <module>plugin</module>
+  </modules>
+
+  <name>projet</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.java>1.9</project.java>
+    <project.junit>5.6.1</project.junit>
+    <project.javafx>14</project.javafx>
+    <project.mockito>3.3.3</project.mockito>
+    <project.testfx>4.0.16-alpha</project.testfx>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>${project.junit}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-controls</artifactId>
+        <version>${project.javafx}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>${project.javafx}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${project.mockito}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-params</artifactId>
+        <version>5.6.1</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.testfx</groupId>
+        <artifactId>testfx-junit5</artifactId>
+        <version>${project.testfx}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.testfx</groupId>
+        <artifactId>testfx-core</artifactId>
+        <version>${project.testfx}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${project.java}</source>
+          <target>${project.java}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M4</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${project.junit}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <argLine>
+            --add-exports javafx.graphics/com.sun.javafx.application=org.testfx
+<!--            &#45;&#45;add-opens projet.base/fr.unice.miage.engine=ALL-UNNAMED
+            &#45;&#45;add-opens projet.base/fr.unice.miage.game.gamemode=ALL-UNNAMED
+            &#45;&#45;add-opens projet.base/fr.unice.miage.game.reflection=ALL-UNNAMED
+            &#45;&#45;add-opens projet.base/fr.unice.miage.graph=ALL-UNNAMED
+            &#45;&#45;add-opens projet.base/fr.unice.miage.game.sprite=ALL-UNNAMED-->
+          </argLine>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

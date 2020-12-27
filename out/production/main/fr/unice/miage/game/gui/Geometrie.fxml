@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.unice.miage.game.gui.MenuGeometrie">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="615.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Arc fill="#ffba1f" layoutX="78.0" layoutY="271.0" length="270.0" radiusX="42.0" radiusY="36.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+      <Circle fill="#ff1f1f" layoutX="275.0" layoutY="121.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="#2f1fff" layoutX="462.0" layoutY="141.0" points="-27.0, 40.0, 50.0, 40.0, 1.0, -32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f61fff" height="55.0" layoutX="378.0" layoutY="307.0" stroke="BLACK" strokeType="INSIDE" width="57.0" />
+      <ProgressBar layoutX="93.0" layoutY="210.0" prefHeight="10.0" prefWidth="98.0" progress="0.33" />
+      <ProgressBar layoutX="287.0" layoutY="63.0" prefHeight="10.0" prefWidth="98.0" progress="0.68" />
+      <ProgressBar layoutX="445.0" layoutY="93.0" prefHeight="10.0" prefWidth="98.0" progress="0.18" />
+      <ProgressBar layoutX="425.0" layoutY="279.0" prefHeight="10.0" prefWidth="98.0" progress="0.52" />
+   </children>
+</AnchorPane>
